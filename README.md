@@ -32,11 +32,13 @@ lein deps
 
 ## Run locally
 
+Running locally will use ring with hot reloading.
+
 ```sh
-lein run
+lein ring server
 ```
 
-## Run with Docker
+## Run with Docker in production mode
 
 ```sh
 docker compose up
