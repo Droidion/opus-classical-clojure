@@ -1,13 +1,26 @@
 services:
-  app:
-    build: .
+  opusclassical-clojure:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: always
     ports:
-      - "3000:3000"
+      - 3000
+    networks:
+      - dokploy-network
     environment:
-      - ENVIRONMENT=development
-      - DATABASE_URL=postgresql://localhost:5432/mydb
-    # Enable hot reloading by mounting source code
-    volumes:
-      - ./src:/app/src
-      - ./resources:/app/resources
-      - ./project.clj:/app/project.clj
+      - DB_NAME=${DB_NAME}
+      - DB_HOST=${DB_HOST}
+      - DB_USER=${DB_USER}
+      - DB_PASSWORD=${DB_PASSWORD}
+      - DB_PORT=${DB_PORT}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.opusclassicalclojure.rule=Host(`clojure.opusclassical.net`)
+      - traefik.http.services.opusclassicalclojure.loadbalancer.server.port=3000
+      - traefik.http.routers.opusclassicalclojure.entrypoints=websecure
+      - traefik.http.routers.opusclassicalclojure.tls.certResolver=letsencrypt
+
+networks:
+  dokploy-network:
+    external: true

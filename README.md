@@ -49,14 +49,6 @@ Create git-ignored file `profiles.clj` and add environment variable for db conne
 lein ring server
 ```
 
-## Run with Docker in production mode
-
-Have environment variable `DATABASE_URL` set to db connection string.
-
-```sh
-docker compose up
-```
-
 ## Build jar file
 
 ```sh

@@ -19,5 +19,7 @@ WORKDIR /app
 # Copy the uberjar from builder stage
 COPY --from=builder /app/target/uberjar/*-standalone.jar /app/app.jar
 
+EXPOSE 3000
+
 # Run the application
 CMD ["java", "-jar", "/app/app.jar"]
