@@ -2,7 +2,8 @@
   (:require
    [org.httpkit.server :as server]
    [ring.middleware.reload :refer [wrap-reload]]
-   [opus-classical-clojure.routes :refer [router]])
+   [opus-classical-clojure.routes :refer [router]]
+   [environ.core :refer [env]])
   (:gen-class))
 
 (def app

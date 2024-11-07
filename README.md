@@ -34,11 +34,19 @@ lein deps
 
 Running locally will use ring with hot reloading.
 
+Create git-ignored file `profile.clj` and add environment variable for db connection:
+
+```clojure
+{:user {:env {:database-url "postgresql://localhost:5432/mydb"}}}
+```
+
 ```sh
 lein ring server
 ```
 
 ## Run with Docker in production mode
+
+Have environment variable `DATABASE_URL` set to db connection string.
 
 ```sh
 docker compose up

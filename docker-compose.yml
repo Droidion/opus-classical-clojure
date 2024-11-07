@@ -5,6 +5,7 @@ services:
       - "3000:3000"
     environment:
       - ENVIRONMENT=development
+      - DATABASE_URL=postgresql://localhost:5432/mydb
     # Enable hot reloading by mounting source code
     volumes:
       - ./src:/app/src

@@ -10,8 +10,9 @@
                  [http-kit "2.8.0"]
                  [metosin/reitit "0.7.2"]
                  [metosin/reitit-ring "0.7.2"]
+                 [environ "1.2.0"]
                  [hiccup "2.0.0-RC3"]]
-  :plugins [[lein-ancient "1.0.0-RC3"] [lein-ring "0.12.6"]]
+  :plugins [[lein-ancient "1.0.0-RC3"] [lein-ring "0.12.6"] [lein-environ "1.2.0"]]
   :ring {:handler opus-classical-clojure.core/app :port 3000}
   :main ^:skip-aot opus-classical-clojure.core
   :target-path "target/%s"
