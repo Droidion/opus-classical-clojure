@@ -1,5 +1,7 @@
 # Opus Classical Clojure
 
+[![Clojure CI](https://github.com/Droidion/opus-classical-clojure/actions/workflows/cicd.yml/badge.svg)](https://github.com/Droidion/opus-classical-clojure/actions/workflows/cicd.yml)
+
 Opus Classical now uses Clojure.
 
 ## Installation
