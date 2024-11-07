@@ -1,0 +1,7 @@
+{
+    "code-runner.executorMap": {
+        "clojure": "lein run"
+    },
+    "calva.evalOnSave": true,
+    "editor.formatOnSave": true
+}

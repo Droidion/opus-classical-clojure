@@ -1,0 +1,12 @@
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - ENVIRONMENT=development
+    # Enable hot reloading by mounting source code
+    volumes:
+      - ./src:/app/src
+      - ./resources:/app/resources
+      - ./project.clj:/app/project.clj
