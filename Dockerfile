@@ -7,6 +7,7 @@ WORKDIR /app
 # Copy project files
 COPY project.clj /app/
 COPY src /app/src
+COPY resources /app/resources
 
 # Build uberjar
 RUN lein uberjar
