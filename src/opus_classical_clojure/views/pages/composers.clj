@@ -1,5 +1,10 @@
-(ns opus-classical-clojure.views.pages.composers
-  (:require [environ.core :refer [env]]))
+(ns opus-classical-clojure.views.pages.composers)
 
-(defn composers-page []
-  [:p (or (env :database-url) "No database URL configured")])
+(defn composers-page [composers]
+  [:div
+   [:h1 "Periods"]
+   [:div.composers-grid
+    (for [{:periods/keys [name year_start year_end slug]} composers]
+      [:div.composer {:key slug}
+       [:h2 name]
+       [:p (str year_start " - " year_end)]])]])

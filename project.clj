@@ -11,7 +11,11 @@
                  [metosin/reitit "0.7.2"]
                  [metosin/reitit-ring "0.7.2"]
                  [environ "1.2.0"]
-                 [hiccup "2.0.0-RC3"]]
+                 [hiccup "2.0.0-RC3"]
+                 [org.postgresql/postgresql "42.7.2"]
+                 [com.github.seancorfield/next.jdbc "1.3.955"]
+                 [com.github.seancorfield/honeysql "2.6.1203"]
+                 [hikari-cp "3.1.0"]]
   :plugins [[lein-ancient "1.0.0-RC3"] [lein-ring "0.12.6"] [lein-environ "1.2.0"]]
   :ring {:handler opus-classical-clojure.core/app :port 3000}
   :main ^:skip-aot opus-classical-clojure.core

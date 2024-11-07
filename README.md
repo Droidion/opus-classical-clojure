@@ -34,10 +34,15 @@ lein deps
 
 Running locally will use ring with hot reloading.
 
-Create git-ignored file `profile.clj` and add environment variable for db connection:
+Create git-ignored file `profiles.clj` and add environment variable for db connection:
 
 ```clojure
-{:user {:env {:database-url "postgresql://localhost:5432/mydb"}}}
+{:dev
+ {:env {:db-name "opus_classical"
+        :db-host "localhost"
+        :db-user "your_username"
+        :db-password "your_password"
+        :db-port "5432"}}}
 ```
 
 ```sh
