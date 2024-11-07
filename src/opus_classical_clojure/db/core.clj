@@ -22,9 +22,8 @@
 (defn init-db! []
   @datasource)
 
-;; Example query function
 (defn query-honey
-  "Execute a HoneySQL query"
   [honey-query]
   (with-open [conn (get-connection)]
-    (jdbc/execute! conn (sql/format honey-query))))
+    (let [results (jdbc/execute! conn (sql/format honey-query))]
+      (vec results))))

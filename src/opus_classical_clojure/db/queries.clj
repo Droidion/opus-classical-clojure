@@ -4,4 +4,5 @@
 (defn get-composers []
   (query-honey
    {:select [:id :name :year_start :year_end :slug]
-    :from [:periods]}))
+    :from [:periods]
+    :order-by [[:year_start :asc]]}))
