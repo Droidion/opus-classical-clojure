@@ -30,6 +30,14 @@ Install dependencies:
 lein deps
 ```
 
+For building client-side assets, have [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.io/) installed.
+
+Install pnpm packages:
+
+```sh
+pnpm install
+```
+
 ## Run locally
 
 Running locally will use ring with hot reloading.
@@ -49,10 +57,29 @@ Create git-ignored file `profiles.clj` and add environment variable for db conne
 lein ring server
 ```
 
-## Build jar file
+In separate terminal, run:
+
+```sh
+pnpm dev
+```
+
+## Build and run for production
+
+Build client assets:
+
+```sh
+pnpm build
+```
+
+Build jar file:
 
 ```sh
 $ lein uberjar
+```
+
+Run jar file:
+
+```sh
 $ java -jar target/opus-classical-clojure-0.1.0-standalone.jar
 ```
 

@@ -5,8 +5,7 @@
   (page/html5
    [:head
     [:title title]
-    [:script {:src "https://cdn.jsdelivr.net/npm/@unocss/runtime"}]
-    [:link {:rel "stylesheet" :href "https://cdn.jsdelivr.net/npm/@unocss/reset/tailwind.min.css"}]]
+    [:link {:rel "stylesheet" :href "styles.css"}]]
    [:body
     [:header
      [:h1 {:class "text-4xl"} title]]

@@ -1,0 +1,16 @@
+{
+  "name": "opus-classical-clojure",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "unocss --watch",
+    "build": "unocss"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@unocss/cli": "^0.64.0",
+    "unocss": "^0.64.0"
+  }
+}
