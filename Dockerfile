@@ -5,7 +5,7 @@ FROM clojure:temurin-23-tools-deps AS builder
 WORKDIR /app
 
 # Copy project files
-COPY project.clj /app/
+COPY deps.edn build.clj /app/
 COPY src /app/src
 COPY resources/public /app/resources/public
 COPY resources/* /app/resources
