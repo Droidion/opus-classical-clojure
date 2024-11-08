@@ -1,9 +1,0 @@
-{:db {:name #or [#env DB_NAME "opusclassical"]
-      :host #or [#env DB_HOST "ep-quiet-rain-a2oz15zt.eu-central-1.aws.neon.tech"]
-      :user #or [#env DB_USER "opusclassical_owner"]
-      :password #or [#env DB_PASSWORD "OtNvoDse6rB7"]
-      :port #or [#env DB_PORT "5432"]}
-
- :server {:port #or [#env PORT "3000"]}
-
- :profile #or [#env ENVIRONMENT "dev"]}
