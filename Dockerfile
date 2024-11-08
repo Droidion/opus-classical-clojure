@@ -24,4 +24,15 @@ COPY --from=builder /app/target/uberjar/*-standalone.jar /app/app.jar
 EXPOSE 3000
 
 # Run the application
-CMD ["java", "-jar", "/app/app.jar"]
+CMD ["java", \
+    # Memory settings
+    "-XX:MaxRAMPercentage=75.0", \
+    # GC settings
+    "-XX:+UseG1GC", \
+    "-XX:+UseStringDeduplication", \
+    # Container awareness
+    "-XX:+UseContainerSupport", \
+    # Faster startup
+    "-XX:TieredStopAtLevel=1", \
+    "-Duser.timezone=UTC", \
+    "-jar", "/app/app.jar"]
