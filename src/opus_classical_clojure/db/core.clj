@@ -3,18 +3,10 @@
    [next.jdbc :as jdbc]
    [hikari-cp.core :as hikari]
    [honey.sql :as sql]
-   [environ.core :refer [env]]))
-
-(def datasource-options
-  {:adapter       "postgresql"
-   :database-name (or (env :db-name) "opus_classical")
-   :server-name   (or (env :db-host) "localhost")
-   :username      (or (env :db-user) "postgres")
-   :password      (or (env :db-password) "postgres")
-   :port-number   (or (env :db-port) 5432)})
+   [opus-classical-clojure.config :refer [db-spec]]))
 
 (defonce datasource
-  (delay (hikari/make-datasource datasource-options)))
+  (delay (hikari/make-datasource (db-spec))))
 
 (defn get-connection []
   (jdbc/get-connection @datasource))
