@@ -19,7 +19,7 @@ FROM eclipse-temurin:23-jre-alpine
 WORKDIR /app
 
 # Copy the uberjar from builder stage
-COPY --from=builder /app/target/uberjar/*-standalone.jar /app/app.jar
+COPY --from=builder /app/target/*-standalone.jar /app/app.jar
 
 EXPOSE 3000
 
