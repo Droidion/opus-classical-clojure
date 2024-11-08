@@ -36,15 +36,18 @@ pnpm install
 
 Running locally will use ring with hot reloading.
 
-Create git-ignored file `profiles.clj` and add environment variable for db connection:
+Create git-ignored file `resources/config.edn` and add environment variable for db connection:
 
 ```clojure
-{:dev
- {:env {:db-name "opus_classical"
-        :db-host "localhost"
-        :db-user "your_username"
-        :db-password "your_password"
-        :db-port "5432"}}}
+{:db {:name #or [#env DB_NAME "opusclassical"]
+      :host #or [#env DB_HOST "neon.tech"]
+      :user #or [#env DB_USER "user"]
+      :password #or [#env DB_PASSWORD "password"]
+      :port #or [#env DB_PORT "5432"]}
+
+ :server {:port #or [#env PORT "3000"]}
+
+ :profile #or [#env ENVIRONMENT "dev"]}
 ```
 
 ```sh

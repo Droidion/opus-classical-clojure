@@ -14,5 +14,6 @@ pom.xml.asc
 .calva/
 .lsp/
 .clj-kondo/
+config.edn
 
 node_modules/
