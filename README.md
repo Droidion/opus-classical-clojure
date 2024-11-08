@@ -62,16 +62,28 @@ pnpm dev
 
 ## Check for outdated dependencies
 
-Check for outdated dependencies:
+Check for outdated clojure dependencies:
 
 ```sh
 clojure -M:outdated
 ```
 
-Update dependencies:
+Update clojure dependencies:
 
 ```sh
 clojure -M:outdated --upgrade
+```
+
+Check for outdated node dependencies:
+
+```sh
+pnpm outdated
+```
+
+Update node dependencies:
+
+```sh
+pnpm update
 ```
 
 ## Build and run for production
@@ -99,3 +111,9 @@ $ java -jar target/opus-classical-clojure-0.1.0-standalone.jar
 ```sh
 clojure -X:test
 ```
+
+## Deploy
+
+I use [Dockploy](https://dockploy.com/) to deploy the app using github hooks.
+
+Main configuration file is `docker-compose.yml`.
