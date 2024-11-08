@@ -1,0 +1,9 @@
+{:db {:name #or [#env DB_NAME "opusclassical"]
+      :host #or [#env DB_HOST "localhost"]
+      :user #or [#env DB_USER "postgres"]
+      :password #or [#env DB_PASSWORD "postgres"]
+      :port #or [#env DB_PORT "5432"]}
+
+ :server {:port #or [#env PORT "3000"]}
+
+ :profile #or [#env ENVIRONMENT "dev"]}

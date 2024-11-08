@@ -5,7 +5,10 @@
 (defn config
   ([] (config {}))
   ([opts]
-   (aero/read-config (io/resource "config.edn") opts)))
+   (let [config-file (if (.exists (io/file "resources/config.edn"))
+                       "config.edn"
+                       "config.default.edn")]
+     (aero/read-config (io/resource config-file) opts))))
 
 ;; Helper functions to get specific config values
 (defn db-spec []

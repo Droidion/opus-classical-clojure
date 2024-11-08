@@ -9,6 +9,7 @@ COPY deps.edn build.clj /app/
 COPY src /app/src
 COPY resources/public /app/resources/public
 COPY resources/* /app/resources
+COPY resources/config.default.edn /app/resources/config.default.edn
 
 # Build uberjar
 RUN clj -T:build uber
