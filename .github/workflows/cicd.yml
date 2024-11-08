@@ -19,20 +19,20 @@ jobs:
           distribution: "temurin"
           java-version: "23"
 
-      - name: Install Leiningen
+      - name: Install Clojure Tools
         uses: DeLaGuardo/setup-clojure@12.6
         with:
-          lein: latest
+          cli: latest
 
-      - name: Cache Maven packages
+      - name: Cache deps.edn dependencies
         uses: actions/cache@v4
         with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/project.clj') }}
-          restore-keys: ${{ runner.os }}-m2
-
-      - name: Install dependencies
-        run: lein deps
+          path: |
+            ~/.m2/repository
+            ~/.gitlibs
+            ~/.deps.clj
+          key: ${{ runner.os }}-deps-${{ hashFiles('**/deps.edn') }}
+          restore-keys: ${{ runner.os }}-deps-
 
       - name: Run tests
-        run: lein test
+        run: clojure -X:test

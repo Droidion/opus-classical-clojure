@@ -16,18 +16,12 @@ Recommend using Java 23.
 sdk install java 23.0.1-tem
 ```
 
-Have Leiningen installed.
-
-```sh
-sdk install lein
-```
-
 Have Clojure installed: https://clojure.org/guides/install_clojure
 
 Install dependencies:
 
 ```sh
-lein deps
+clojure -P
 ```
 
 For building client-side assets, have [Node.js](https://nodejs.org/en) and [pnpm](https://pnpm.io/) installed.
@@ -54,13 +48,27 @@ Create git-ignored file `profiles.clj` and add environment variable for db conne
 ```
 
 ```sh
-lein ring server
+clojure -M:ring
 ```
 
 In separate terminal, run:
 
 ```sh
 pnpm dev
+```
+
+## Check for outdated dependencies
+
+Check for outdated dependencies:
+
+```sh
+clojure -M:outdated
+```
+
+Update dependencies:
+
+```sh
+clojure -M:outdated --upgrade
 ```
 
 ## Build and run for production
@@ -74,7 +82,7 @@ pnpm build
 Build jar file:
 
 ```sh
-$ lein uberjar
+clojure -T:build uber
 ```
 
 Run jar file:
@@ -86,5 +94,5 @@ $ java -jar target/opus-classical-clojure-0.1.0-standalone.jar
 ## Tests
 
 ```sh
-lein test
+clojure -X:test
 ```

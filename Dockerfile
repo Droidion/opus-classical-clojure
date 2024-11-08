@@ -1,5 +1,5 @@
 # Build stage
-FROM clojure:temurin-23-lein AS builder
+FROM clojure:temurin-23-tools-deps AS builder
 
 # Set working directory
 WORKDIR /app
@@ -11,7 +11,7 @@ COPY resources/public /app/resources/public
 COPY resources/* /app/resources
 
 # Build uberjar
-RUN lein uberjar
+RUN clj -T:build uber
 
 # Runtime stage
 FROM eclipse-temurin:23-jre-alpine
